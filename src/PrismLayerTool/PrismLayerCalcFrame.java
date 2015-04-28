@@ -32,7 +32,7 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
     }
 
     private int getStretchingFunc() {
-        return stretchCombo.getSelectedIndex();
+        return stretchFuncCombo.getSelectedIndex();
     }
     
     private int getDistributionMode() {
@@ -48,18 +48,18 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
     }
     
     private double getNearWallThickness() {
-        return Double.parseDouble(nearWallBox.getText());
+        return Double.parseDouble(stretchParameterBox.getText());
     }
     
     private double getStretchingValue() {
-        return Double.parseDouble(stretchBox.getText());
+        return Double.parseDouble(nearWallBox.getText());
     }
     
     private void updateTextValues(int Layers, double[] other) {
         numLayersBox.setText(Integer.toString(Layers));
         totalThicknessBox.setText(Double.toString(other[0]));
-        nearWallBox.setText(Double.toString(other[1]));
-        stretchBox.setText(Double.toString(other[2]));
+        stretchParameterBox.setText(Double.toString(other[1]));
+        nearWallBox.setText(Double.toString(other[2]));
     }
     
     private double calcNearWallThickness(int N, double totalThick, double stretch, int mode) {
@@ -126,55 +126,61 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        prismLayerToolTitle = new javax.swing.JLabel();
+        stretchFuncLabel = new javax.swing.JLabel();
+        distModeLabel = new javax.swing.JLabel();
+        numLayersLabel = new javax.swing.JLabel();
+        totalThicknessLabel = new javax.swing.JLabel();
+        stretchParameterLabel = new javax.swing.JLabel();
+        nearWallLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        stretchCombo = new javax.swing.JComboBox();
+        stretchFuncCombo = new javax.swing.JComboBox();
         distModeCombo = new javax.swing.JComboBox();
         numLayersBox = new javax.swing.JFormattedTextField(NumberFormat.getIntegerInstance());
         totalThicknessBox = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
+        stretchParameterBox = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
         nearWallBox = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
-        stretchBox = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
         closeButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        thicknessRatioLabel = new javax.swing.JLabel();
+        thicknessRatioBox = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
+        meshOpLabel = new javax.swing.JLabel();
+        meshOpCombo = new javax.swing.JComboBox();
         calcButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(445, 350));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel1.text")); // NOI18N
+        prismLayerToolTitle.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(prismLayerToolTitle, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.prismLayerToolTitle.text")); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel2.text")); // NOI18N
+        stretchFuncLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(stretchFuncLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.stretchFuncLabel.text")); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel3.text")); // NOI18N
+        distModeLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(distModeLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.distModeLabel.text")); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel4.text")); // NOI18N
+        numLayersLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(numLayersLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.numLayersLabel.text")); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel5.text")); // NOI18N
+        totalThicknessLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(totalThicknessLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.totalThicknessLabel.text")); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel6, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel6.text")); // NOI18N
+        stretchParameterLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(stretchParameterLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.stretchParameterLabel.text")); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.jLabel7.text")); // NOI18N
+        nearWallLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(nearWallLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.nearWallLabel.text")); // NOI18N
 
-        stretchCombo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        stretchCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Geometric Progression", "Hyperbolic Tangent" }));
-        stretchCombo.setSelectedIndex(0);
+        stretchFuncCombo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        stretchFuncCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Geometric Progression", "Hyperbolic Tangent" }));
+        stretchFuncCombo.setSelectedIndex(0);
 
         distModeCombo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        distModeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Stretch Factor", "Wall Thickness" }));
+        distModeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Stretch Factor", "Wall Thickness", "Thickness Ratio" }));
         distModeCombo.setSelectedIndex(0);
         distModeCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,12 +199,13 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
         totalThicknessBox.setText(org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.totalThicknessBox.text")); // NOI18N
         totalThicknessBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
+        stretchParameterBox.setText(org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.stretchParameterBox.text")); // NOI18N
+        stretchParameterBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        stretchParameterBox.setEditable(true);
+
         nearWallBox.setText(org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.nearWallBox.text")); // NOI18N
         nearWallBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        nearWallBox.setEditable(false);
-
-        stretchBox.setText(org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.stretchBox.text")); // NOI18N
-        stretchBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nearWallBox.setEditable (false);
 
         closeButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(closeButton, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.closeButton.text")); // NOI18N
@@ -207,6 +214,27 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
                 closeButtonActionPerformed(evt);
             }
         });
+
+        updateButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(updateButton, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.updateButton.text")); // NOI18N
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
+
+        thicknessRatioLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(thicknessRatioLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.thicknessRatioLabel.text")); // NOI18N
+
+        thicknessRatioBox.setText(org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.thicknessRatioBox.text")); // NOI18N
+        thicknessRatioBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        thicknessRatioBox.setEditable (false);
+
+        meshOpLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(meshOpLabel, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.meshOpLabel.text")); // NOI18N
+
+        meshOpCombo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        meshOpCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mesh Operation" }));
 
         calcButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         org.openide.awt.Mnemonics.setLocalizedText(calcButton, org.openide.util.NbBundle.getMessage(PrismLayerCalcFrame.class, "PrismLayerCalcFrame.calcButton.text")); // NOI18N
@@ -227,70 +255,90 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
                     .addComponent(jSeparator2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
+                            .addComponent(totalThicknessLabel)
+                            .addComponent(stretchFuncLabel)
+                            .addComponent(distModeLabel)
+                            .addComponent(numLayersLabel)
+                            .addComponent(stretchParameterLabel)
+                            .addComponent(nearWallLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(stretchCombo, 0, 200, Short.MAX_VALUE)
+                            .addComponent(stretchFuncCombo, 0, 200, Short.MAX_VALUE)
                             .addComponent(distModeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(numLayersBox)
                             .addComponent(totalThicknessBox)
-                            .addComponent(nearWallBox)
-                            .addComponent(stretchBox)))
+                            .addComponent(stretchParameterBox)
+                            .addComponent(nearWallBox)))
+                    .addComponent(jSeparator3)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(thicknessRatioLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(thicknessRatioBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 201, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(calcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(prismLayerToolTitle)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(meshOpLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(meshOpCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(prismLayerToolTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(stretchFuncLabel)
+                    .addComponent(stretchFuncCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(stretchCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(distModeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(distModeCombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(numLayersBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(distModeCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numLayersLabel)
+                    .addComponent(numLayersBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(totalThicknessBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(totalThicknessLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(stretchParameterBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stretchParameterLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(nearWallBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(nearWallLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stretchBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                    .addComponent(thicknessRatioLabel)
+                    .addComponent(thicknessRatioBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(meshOpLabel)
+                    .addComponent(meshOpCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeButton)
+                    .addComponent(updateButton)
                     .addComponent(calcButton))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -305,10 +353,10 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_closeButtonActionPerformed
 
-    private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
         int distMode = distModeCombo.getSelectedIndex();
-        int stretchFun = stretchCombo.getSelectedIndex();
+        int stretchFun = stretchFuncCombo.getSelectedIndex();
         
         int N = getNumLayers();
         double[] vals = {1.0, 1.0, 1.0};
@@ -325,22 +373,33 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
                 break;
         }
         updateTextValues(N, vals);
-    }//GEN-LAST:event_calcButtonActionPerformed
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     private void distModeComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distModeComboActionPerformed
         // TODO add your handling code here:
         int distMode = distModeCombo.getSelectedIndex();
         switch (distMode) {
             case 0:
+                stretchParameterBox.setEditable(true);
                 nearWallBox.setEditable(false);
-                stretchBox.setEditable(true);
+                thicknessRatioBox.setEditable(false);
                 break;
             case 1:
+                stretchParameterBox.setEditable(false);
                 nearWallBox.setEditable(true);
-                stretchBox.setEditable(false);
+                thicknessRatioBox.setEditable(false);
+                break;
+            case 2:
+                stretchParameterBox.setEditable(false);
+                nearWallBox.setEditable(false);
+                thicknessRatioBox.setEditable(true);
                 break;
         }
     }//GEN-LAST:event_distModeComboActionPerformed
+
+    private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_calcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,19 +439,25 @@ public class PrismLayerCalcFrame extends javax.swing.JFrame {
     private javax.swing.JButton calcButton;
     private javax.swing.JButton closeButton;
     private javax.swing.JComboBox distModeCombo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel distModeLabel;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JComboBox meshOpCombo;
+    private javax.swing.JLabel meshOpLabel;
     private javax.swing.JFormattedTextField nearWallBox;
+    private javax.swing.JLabel nearWallLabel;
     private javax.swing.JFormattedTextField numLayersBox;
-    private javax.swing.JFormattedTextField stretchBox;
-    private javax.swing.JComboBox stretchCombo;
+    private javax.swing.JLabel numLayersLabel;
+    private javax.swing.JLabel prismLayerToolTitle;
+    private javax.swing.JComboBox stretchFuncCombo;
+    private javax.swing.JLabel stretchFuncLabel;
+    private javax.swing.JFormattedTextField stretchParameterBox;
+    private javax.swing.JLabel stretchParameterLabel;
+    private javax.swing.JFormattedTextField thicknessRatioBox;
+    private javax.swing.JLabel thicknessRatioLabel;
     private javax.swing.JFormattedTextField totalThicknessBox;
+    private javax.swing.JLabel totalThicknessLabel;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }
