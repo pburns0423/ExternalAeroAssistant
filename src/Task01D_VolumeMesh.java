@@ -1,6 +1,6 @@
 // Adding a comment to the default task.
 
-import PrismLayerTool.PrismLayerCalcFrame;
+import Tools.PrismLayerCalculator;
 import star.assistant.Task;
 import star.assistant.annotation.StarAssistantTask;
 import star.assistant.ui.FunctionTaskController;
@@ -18,7 +18,7 @@ public class Task01D_VolumeMesh extends Task {
             Simulation sim = getActiveSimulation();
 
             // launch PrismLayerCalculator Panel
-            final PrismLayerCalcFrame calc = new PrismLayerCalcFrame(sim);
+            final PrismLayerCalculator calc = new PrismLayerCalculator(sim);
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     calc.setVisible(true);

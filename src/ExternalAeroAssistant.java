@@ -5,7 +5,7 @@ import star.assistant.Task;
 import star.assistant.annotation.StarAssistant;
 
 
-@StarAssistant(display="ExternalAeroAssistant")
+@StarAssistant(display="External Aero Assistant")
 public final class ExternalAeroAssistant extends SimulationAssistant {
 
     public ExternalAeroAssistant() {
